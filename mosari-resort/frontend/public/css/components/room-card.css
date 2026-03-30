@@ -1,0 +1,209 @@
+@import url("../base/global.css");
+
+/* Featured Room Card */
+.featured-room-card {
+  background: white;
+}
+
+.featured-carousel-img {
+  height: 600px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Standard Room Cards */
+.room-card {
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+  border-radius: 20px !important; /* Bo góc nhỏ lại một chút */
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.room-card-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 210px; /* Thu nhỏ chiều cao ảnh */
+  background-color: #000; /* Nền đen để hiệu ứng tối mượt hơn */
+}
+
+/* Lớp phủ gradient tối phần trên cùng để làm nổi Badge */
+.room-card-img-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.1) 40%,
+    transparent 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.room-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Làm tối ảnh gốc */
+  filter: brightness(0.85);
+  transition:
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    filter 0.4s ease;
+}
+
+.room-card-body {
+  padding: 1.2rem !important; /* Thu nhỏ padding thẻ */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.room-card-body .room-title {
+  font-size: 1.25rem; /* Tiêu đề nhỏ gọn hơn */
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 0.6rem;
+  font-family: "Crimson Pro", serif;
+  display: -webkit-box;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.room-card-meta {
+  font-size: 0.8rem; /* Meta text gọn hơn */
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+  display: flex;
+  gap: 15px;
+}
+
+.room-card-meta i {
+  color: var(--secondary-color);
+  margin-right: 4px;
+}
+
+.room-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+}
+
+.room-card:hover .room-card-img {
+  transform: scale(1.08);
+  filter: brightness(1); /* Sáng lên khi hover */
+}
+
+.room-card:hover .room-card-img-wrapper::after {
+  opacity: 0.5; /* Giảm độ đậm của lớp phủ gradient khi hover */
+}
+
+/* Booking Room Card */
+.booking-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.booking-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.booking-card-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.booking-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.booking-card:hover .booking-card-img {
+  transform: scale(1.05);
+}
+
+.booking-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.booking-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  font-family: "Crimson Pro", serif;
+  margin-bottom: 0.5rem;
+}
+
+.booking-price-wrap {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: right;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .booking-card {
+    flex-direction: row;
+  }
+
+  .booking-card-img-wrap {
+    width: 35%;
+    height: auto;
+    min-height: 250px;
+  }
+
+  .booking-card-body {
+    width: 65%;
+    padding: 2rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .room-card-img-wrapper {
+    height: 200px;
+  }
+  .roomSwiper {
+    padding: 10px 0 50px 0;
+    margin: 0;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
+
+  .booking-price-wrap {
+    margin-top: 15px;
+    text-align: left;
+  }
+}
