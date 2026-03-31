@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="<?= BASE_URL ?>/frontend/public/images/favicon.ico">
     <title><?= $page_title ?></title>
-    <link rel="stylesheet" href="<?= CSS_DIR ?>/components/global.css">
+    <link rel="stylesheet" href="<?= CSS_DIR ?>/global.css">
 </head>
 
+<!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
         <!-- Logo -->
         <a class="navbar-brand d-flex align-items-center" href="<?= BASE_URL ?>">
-            <i class="bi bi-flower1 fs-3 me-2"></i>
+            <i class="bi bi-flower1 fs-3 me-2 logo-text"></i>
             <span class="d-flex flex-column justify-content-center" style="line-height: 1;">
-                <span class="fw-bold"
-                    style="font-size: 1.5rem; letter-spacing: 3.5px; font-family: 'Cinzel', serif;">MOSARI</span>
-                <span class="fw-light text-white"
-                    style="font-size: 0.6rem; letter-spacing: 4px; font-family: 'Montserrat';">RESORT & SPA</span>
+                <div class="fw-bold logo-text"
+                    style="font-size: 1.5rem; letter-spacing: 3.5px; font-family: 'Cinzel', serif;">MOSARI</div>
+                <div class="fw-light text-white"
+                    style="font-size: 0.6rem; letter-spacing: 4px; font-family: 'Montserrat';">RESORT & SPA</div>
             </span>
         </a>
         <!-- Mobile Menu Toggler -->

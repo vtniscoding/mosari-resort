@@ -1,3 +1,5 @@
+@import url("../global.css");
+
 .roomSwiper {
   padding: 20px 50px 50px 50px;
   margin: -20px -50px;
@@ -10,7 +12,7 @@
 .swiper-button-next,
 .swiper-button-prev {
   color: var(--primary-color) !important;
-  background-color: #ffffff;
+  background-color: white;
   width: 45px !important;
   height: 45px !important;
   border-radius: 50%;
@@ -22,7 +24,7 @@
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
   background-color: var(--primary-color);
-  color: #ffffff !important;
+  color: white !important;
   transform: scale(1.1);
 }
 
@@ -30,4 +32,19 @@
 .swiper-button-prev::after {
   font-size: 1.2rem !important;
   font-weight: 800;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .room-card-img-wrapper {
+    height: 200px;
+  }
+  .roomSwiper {
+    padding: 10px 0 50px 0;
+    margin: 0;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
 }

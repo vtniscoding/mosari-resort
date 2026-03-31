@@ -1,0 +1,106 @@
+@import url("../global.css");
+
+.material-slider-container {
+  display: flex;
+  width: 100%;
+  height: 450px; /* Chiều cao tổng thể */
+  gap: 15px;
+  padding: 10px;
+}
+
+.material-slide-item {
+  position: relative;
+  flex: 1; /* Mặc định các thẻ chia đều nhau */
+  border-radius: var(--radius-lg);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: flex 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Lớp phủ đen gradient để chữ nổi bật */
+.material-slide-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(17, 23, 29, 0.9) 0%,
+    rgba(17, 23, 29, 0.4) 40%,
+    transparent 100%
+  );
+  opacity: 0.8;
+  transition: opacity 0.4s ease;
+}
+
+/* Khi thẻ được hover hoặc đang active */
+.material-slide-item:hover,
+.material-slide-item.active {
+  flex: 4; /* Mở rộng thẻ này gấp 4 lần thẻ khác */
+}
+
+.material-slide-item:hover::before,
+.material-slide-item.active::before {
+  opacity: 1;
+}
+
+.slide-content {
+  position: absolute;
+  bottom: 20px;
+  left: 60px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.slide-text {
+  opacity: 0;
+  transform: translateX(30px);
+  transition:
+    opacity 0.4s ease 0.2s,
+    transform 0.4s ease 0.2s;
+  white-space: normal;
+}
+
+/* Hiển thị chữ khi thẻ được mở rộng */
+.material-slide-item:hover .slide-text,
+.material-slide-item.active .slide-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text-white);
+  white-space: nowrap;
+}
+
+/* Responsive cho Mobile */
+@media (max-width: 768px) {
+  .material-slider-container {
+    flex-direction: column; /* Chuyển thành xếp dọc */
+    height: 600px;
+  }
+  .slide-content {
+    bottom: 20px;
+    left: 15px;
+    right: 15px;
+    gap: 15px;
+  }
+  .slide-text {
+    transform: translateY(20px);
+  }
+  .material-slide-item:hover .slide-text,
+  .material-slide-item.active .slide-text {
+    transform: translateY(0);
+  }
+  .slide-title {
+    white-space: normal;
+    font-size: 1.2rem;
+  }
+}

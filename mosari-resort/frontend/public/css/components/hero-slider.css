@@ -1,181 +1,197 @@
+@import url("../global.css");
+
 .slider-section {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background-color: #000;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
 }
 
 .slider-section .carousel-item {
-    height: 100vh;
-    background-color: #000;
+  height: 100vh;
+  background-color: #000;
 }
 
 .slider-section .carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.3;
-    transform: scale(1);
-    transition: transform 7s ease-in-out;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+  transform: scale(1);
+  transition: transform 7s ease-in-out;
 }
 
 .slider-section .carousel-item.active img {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .slider-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(26, 37, 47, 0.95) 100%);
-    z-index: 1;
-    pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(26, 37, 47, 0.95) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
 }
 
 .slider-section .carousel-caption {
-    top: 45%;
-    transform: translateY(-50%);
-    bottom: auto;
-    z-index: 2;
-    text-align: center;
-    padding: 0 20px;
+  top: 45%;
+  transform: translateY(-50%);
+  bottom: auto;
+  z-index: 2;
+  text-align: center;
+  padding: 0 20px;
 }
 
 /* Slider Slogan */
 .slider-slogan {
-    font-size: 1.1rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    font-weight: 500;
-    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
-    animation: fadeInUp 1s ease 0.5s backwards;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: var(--logo-color);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+  font-weight: 600;
+  animation: fadeInUp 1s ease 0.5s backwards;
 }
 
-/* Slider Title */  
+/* Slider Title */
 .slider-title {
-    font-size: 4.5rem;
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
-    line-height: 1.2;
-    color: #ffffff;
-    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
-    animation: fadeInUp 1s ease 0.7s backwards;
+  font-size: 4rem;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: var(--gray-gradient);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeInUp 1s ease 0.7s backwards;
 }
 
 .slider-btn-wrap {
-    animation: fadeInUp 1s ease 0.9s backwards;
+  animation: fadeInUp 1s ease 0.9s backwards;
 }
 
 .btn-slider {
-    display: inline-block;
-    padding: 15px 45px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    color: #fff;
-    text-decoration: none;
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 600;
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    transition: all 0.4s ease;
-    border-radius: 50px;
+  display: inline-block;
+  padding: 15px 45px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: all 0.4s ease;
+  border-radius: 50px;
 }
 
 .btn-slider:hover {
-    background-color: #fff;
-    color: var(--secondary-color);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  color: var(--secondary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Hidden Slider Indicators */
 .slider-section .carousel-indicators {
-    display: none;
-    margin-bottom: 15vh;
-    z-index: 3;
+  display: none;
+  margin-bottom: 15vh;
+  z-index: 3;
 }
 
 .slider-section .carousel-indicators [data-bs-target] {
-    width: 35px;
-    height: 3px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border: none;
-    transition: all 0.3s ease;
-    border-radius: 3px;
-    margin: 0 6px;
+  width: 35px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+  margin: 0 6px;
 }
 
 .slider-section .carousel-indicators .active {
-    width: 60px;
-    background-color: var(--primary-color);
+  width: 60px;
+  background-color: var(--primary-color);
 }
 
 .slider-section .carousel-control-prev,
 .slider-section .carousel-control-next {
-    z-index: 3;
-    width: 8%;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  z-index: 3;
+  width: 8%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .slider-section:hover .carousel-control-prev,
 .slider-section:hover .carousel-control-next {
-    opacity: 1;
+  opacity: 1;
 }
 
 .control-icon {
-    font-size: 2.5rem;
-    color: rgba(255, 255, 255, 0.6);
-    transition: 0.3s;
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  transition: 0.3s;
 }
 
 .control-icon:hover {
-    color: #ffffff;
-    transform: scale(1.2);
+  color: #ffffff;
+  transform: scale(1.2);
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {
-    .slider-section .carousel-caption {
-        top: 40%;
-    }
+  /* Đẩy phần caption lên một chút để nhường chỗ cho Widget ở dưới */
+  .slider-section .carousel-caption {
+    top: 38%;
+  }
 
-    .slider-title {
-        font-size: 2.5rem;
-    }
+  /* Thu nhỏ và làm tiêu đề thanh thoát hơn */
+  .slider-title {
+    font-size: 1.5rem;
+  }
 
-    .slider-slogan {
-        font-size: 0.9rem;
-    }
+  .slider-slogan {
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+  }
 
-    .btn-slider {
-        padding: 12px 30px;
-        font-size: 0.75rem;
-    }
+  .btn-slider {
+    padding: 10px 24px;
+    font-size: 0.75rem;
+  }
 
-    .slider-section .carousel-control-prev,
-    .slider-section .carousel-control-next {
-        display: none;
-    }
+  .slider-section .carousel-control-prev,
+  .slider-section .carousel-control-next {
+    display: none;
+  }
 }

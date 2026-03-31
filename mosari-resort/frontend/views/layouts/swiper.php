@@ -1,5 +1,5 @@
-<div class="swiper roomSwiper pb-5 mt-4">
-    <div class="swiper-wrapper">
+<div class="swiper roomSwiper pb-5">
+    <div class="swiper-wrapper mt-5">
         <?php if (!empty($room_types)): ?>
             <?php foreach ($room_types as $room): ?>
                 <?php
@@ -40,5 +40,42 @@
             </div>
         <?php endif; ?>
     </div>
+
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
     <div class="swiper-pagination mt-4 position-static"></div>
 </div>
+
+<script>
+    // Initialize Swiper
+    document.addEventListener('DOMContentLoaded', function () {
+        const swiper = new Swiper('.roomSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 25, /* Giảm khoảng cách một chút cho thẻ gọn hơn */
+            loop: false,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 25,
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                }
+            }
+        });
+    });
+</script>
